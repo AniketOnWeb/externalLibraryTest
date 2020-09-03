@@ -25,11 +25,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
       iFramePopup.style.left = `${
         getParentButtonId.getBoundingClientRect().left
       }px`;
-      // iFramePopup.style.top = `${
-      //   getParentButtonId.getBoundingClientRect().top
-      // }+${getParentButtonId.getBoundingClientRect().height}px`;
       iFramePopup.style.top = `${
-        getParentButtonId.getBoundingClientRect().top
+        getParentButtonId.getBoundingClientRect().top +
+        getParentButtonId.getBoundingClientRect().height +
+        3
       }px`;
 
       console.log(getParentButtonId.getBoundingClientRect());
