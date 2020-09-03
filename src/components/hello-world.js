@@ -2,9 +2,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
   const iframeLink = "https://aniket.codes";
 
   //initial rendering of feedBack popup
-  let iFramePopup = document
-    .createElement("iframe")
-    .setAttribute("src", iframeLink);
+  let iFramePopup = document.createElement("iframe");
+  iFramePopup.setAttribute("src", iframeLink);
+
   if (iFramePopup) {
     iFramePopup.style.display = "none";
     iFramePopup.style.position = "absolute";
@@ -19,6 +19,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   if (getParentButtonId && iFramePopup) {
     getParentButtonId.addEventListener("click", function () {
+      console.log(iFramePopup);
+      console.log("iFramePopup");
+
       iFramePopup.style.display = "block";
       iFramePopup.style.left = `${
         getParentButtonId.getBoundingClientRect().left
