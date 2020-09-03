@@ -8,6 +8,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
   if (iFramePopup) {
     iFramePopup.style.display = "none";
     iFramePopup.style.position = "absolute";
+    iFramePopup.style.height = "460px";
+    iFramePopup.style.width = "460px";
+    iFramePopup.style.border = "0";
   }
 
   document.body.appendChild(iFramePopup);
@@ -15,20 +18,21 @@ window.addEventListener("DOMContentLoaded", (event) => {
   //===========activate and display the popup================================
   //clickedButton
   const getParentButtonId = document.getElementById("getParentButtonId");
-  console.log(getParentButtonId);
 
   if (getParentButtonId && iFramePopup) {
     getParentButtonId.addEventListener("click", function () {
-      console.log(iFramePopup);
-      console.log("iFramePopup");
-
       iFramePopup.style.display = "block";
       iFramePopup.style.left = `${
         getParentButtonId.getBoundingClientRect().left
       }px`;
+      // iFramePopup.style.top = `${
+      //   getParentButtonId.getBoundingClientRect().top
+      // }+${getParentButtonId.getBoundingClientRect().height}px`;
       iFramePopup.style.top = `${
         getParentButtonId.getBoundingClientRect().top
-      }+${getParentButtonId.getBoundingClientRect().height}px`;
+      }px`;
+
+      console.log(getParentButtonId.getBoundingClientRect());
     });
   }
 });
