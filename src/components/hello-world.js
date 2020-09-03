@@ -32,4 +32,8 @@ export default class {
       }
     });
   }
+
+  static write() {
+    document.body.append("Hello World!");
+  }
 }
